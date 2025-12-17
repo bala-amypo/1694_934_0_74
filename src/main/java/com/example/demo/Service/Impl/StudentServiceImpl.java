@@ -15,5 +15,11 @@ public class StudentServiceImpl implements StudentService{
         return strepo.save(st);
     }
     @Override
-    public Student
+    public List<Student> getAllStudents{
+        return strepo.findAll(st);
+    }
+    @Override 
+    public Optional<Student> getOneStudent{
+        return 
+    }
 }
