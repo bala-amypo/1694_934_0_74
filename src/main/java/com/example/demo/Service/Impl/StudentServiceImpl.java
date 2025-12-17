@@ -1,33 +1,38 @@
-package com.example.demo.service.impl;
+package com.example.demo.Service.Impl;
+
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.example.demo.entity.Student;
 import com.example.demo.repository.Studentrepo;
 import com.example.demo.service.StudentService;
+
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
+
     @Autowired
     Studentrepo strepo;
+
     @Override
-    public Student insertStudent(Student st)
-    {
+    public Student insertStudent(Student st) {
         return strepo.save(st);
     }
+
     @Override
-    public List<Student> getAllStudents()
-    {
-        return strepo.findAll(st);
+    public List<Student> getAllStudents() {
+        return strepo.findAll();   
     }
+
     @Override 
-    public Optional<Student> getOneStudent(Long id)
-    {
+    public Optional<Student> getOneStudent(Long id) {
         return strepo.findById(id);
     }
+
     @Override
-    public void deleteStudent(Long id)
-    {
-        return strepo.deleteById(id);
+    public void deleteStudent(Long id) {
+        strepo.deleteById(id);    
     }
 }
