@@ -9,7 +9,7 @@ import com.example.demo.Service.StudentService;
 @Service
 public class StudentServiceImpl implements StudentService{
     @Autowired
-    StudentRepo strepo;
+    Studentrepo strepo;
     @Override
     public Student insertStudent(Student st){
         return strepo.save(st);
