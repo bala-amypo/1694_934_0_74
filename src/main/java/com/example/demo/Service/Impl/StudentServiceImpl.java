@@ -9,14 +9,14 @@ import com.example.demo.service.StudentService;
 @Service
 public class StudentServiceImpl implements StudentService{
     @Autowired
-    Studentrepo strepo
+    Studentrepo strepo;
     @Override
     public Student insertStudent(Student st)
     {
         return strepo.save(st);
     }
     @Override
-    public List<Student> getAllStudents
+    public List<Student> getAllStudents()
     {
         return strepo.findAll(st);
     }
